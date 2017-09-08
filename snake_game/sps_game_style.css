@@ -1,0 +1,16 @@
+.outer_range{
+    
+    position: absolute;
+    top:13em;
+    left:22em;
+    
+}
+
+
+#submit{
+    width: 9em;
+    height: 4em;
+    position: absolute;
+    top:35em;
+    left:45em;
+}
