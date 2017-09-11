@@ -6,10 +6,11 @@ var user_choice
 var user_num
 
 function startgame2() {
-    alert("666")
+    com = Math.floor(Math.random()*3+1)
+    alert(com)
 }
 
-function startgame() {
+function startgame1() {
     user_choice = document.getElementById("psp_choice").psp
     for (i = 0; i < user_choice.length; i++) {
 
@@ -25,37 +26,41 @@ function startgame() {
 
 }
 
-function startgame1() {
-    user_choice = document.getElementById("psp_choice")
-    for (i = 0; i <= user_choice.psp.length; i++) {
-        if (user_choice.psp.value != undefined) {
-            if (user_choice.psp.checked) {
-                user_num = user_choice.psp.value
+function startgame() {
+    user_choice = document.getElementById("psp_choice").psp
+    com = Math.floor(Math.random()*3+1)
+    for (i = 0; i < user_choice.length; i++) {
+        
+            if (user_choice[i].checked) {
+                user_num = user_choice[i].value
+            }else{
+
             }
-        }
+            
     }
-    alert(user_num)
+    
+    
     if (user_num == "scissors") {
         user_num = 1
-    } if (user_num == "stone") {
+    }else if (user_num == "stone") {
         user_num = 2
     } else {
         user_num = 3
-    } {
+    } 
 
-    }
 
-    if (user == com) {
+
+    if (user_num == com) {
         alert("平手")
-    } else if ((user - com) < 0) {
-        if ((user - com == -2)) {
+    } else if ((user_num - com) < 0) {
+        if ((user_num - com == -2)) {
             alert("恭喜!!你贏了!! 電腦出：" + com)
         } else {
             alert("可惜!!你輸了!!電腦出：" + com)
         }
 
     } else {
-        if ((user - com) == 1) {
+        if ((user_num - com) == 1) {
             alert("恭喜!!你贏了!!電腦出：" + com)
         } else {
             alert("可惜!!你輸了!!電腦出：" + com)
