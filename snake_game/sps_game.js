@@ -48,22 +48,30 @@ function startgame() {
         user_num = 3
     } 
 
+    com_str = com
 
+    if(com_str == 1){
+        com_str = "scissors"
+    }else if(com_str == 2){
+        com_str = "stone"
+    }else{
+        com_str = "paper"
+    }
 
     if (user_num == com) {
         alert("平手")
     } else if ((user_num - com) < 0) {
         if ((user_num - com == -2)) {
-            alert("恭喜!!你贏了!! 電腦出：" + com)
+            alert("恭喜!!你贏了!! 電腦出：" + com_str)
         } else {
-            alert("可惜!!你輸了!!電腦出：" + com)
+            alert("可惜!!你輸了!!電腦出：" + com_str)
         }
 
     } else {
         if ((user_num - com) == 1) {
-            alert("恭喜!!你贏了!!電腦出：" + com)
+            alert("恭喜!!你贏了!!電腦出：" + com_str)
         } else {
-            alert("可惜!!你輸了!!電腦出：" + com)
+            alert("可惜!!你輸了!!電腦出：" + com_str)
         }
 
     }

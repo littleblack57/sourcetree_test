@@ -1,0 +1,104 @@
+#aa {
+    width: 50%;
+    color: azure;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: violet;
+}
+
+#bb {
+    color: cadetblue;
+}
+
+p#aa {
+    color: black;
+    font-size: 30px;
+    background-color: darkgreen;
+    text-transform: lowercase;
+}
+
+.big-fontsize {
+    padding: 16px;
+    color: blue;
+    background-color: pink;
+}
+
+.blue-font {
+    font-size: 50px;
+}
+
+body {
+    text-decoration-color: cornflowerblue;
+    font-family: fantasy;
+    font-weight: lighter;
+}
+
+a[href="https://tw.yahoo.com"] {
+    color: red;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+a#yahoo_adres::before {
+    content: "111";
+    color: gold;
+    text-decoration: none;
+}
+
+a#yahoo_adres:hover {
+    color: chartreuse;
+    text-decoration: underline;
+    text-decoration-color: chocolate;
+}
+
+a:hover#yahoo_adres::before {
+    content: "111";
+    color: red;
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+a#yahoo_adres:hover::after {
+    content: url("images/images.jpg");
+    position: absolute;
+    border: dotted black 2px;
+}
+
+#manythings {
+    color: red;
+    font-size: 2em
+}
+
+.greentype {
+    background: greenyellow;
+    border: 15dx;
+    border-style: dotted;
+    border-color: darkcyan
+}
+
+.telatype {
+    background: teal;
+}
+
+.greentype:hover #something{
+    visibility: visible;
+}
+
+#something{
+    visibility: hidden;
+}
+
+.menu{
+    width: 600px;
+    height: 24px;
+
+}
+
+.menu li{
+    float: left;
+    padding-right: 0.5em;
+    list-style-type:none;
+    
+    
+}
+
+
