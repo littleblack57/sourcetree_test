@@ -1,0 +1,46 @@
+
+.main {
+    display: flex;
+    justify-content: center;
+    
+}
+
+#fubon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: dodgerblue;
+    width: 641px;
+    height: 641px;
+    float: left;
+}
+
+#lamigo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkcyan;
+    width: 641px;
+    height: 641px;
+    float: left;
+}
+
+#brother {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: yellow;
+    width: 641px;
+    height: 641px;
+    float: left;
+}
+
+#lion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orangered;
+    width: 641px;
+    height: 641px;
+    float: left;
+}

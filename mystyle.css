@@ -101,4 +101,15 @@ a#yahoo_adres:hover::after {
     
 }
 
+#div-test{
+    position: absolute;
+    height: 20px;
+    width: 4em;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
 
