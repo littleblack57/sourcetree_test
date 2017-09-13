@@ -10,9 +10,9 @@
     align-items: center;
     justify-content: center;
     background-color: dodgerblue;
-    width: 641px;
-    height: 641px;
-    float: left;
+    width: 50vw;
+    height: 50vh;
+    
 }
 
 #lamigo {
@@ -20,9 +20,9 @@
     align-items: center;
     justify-content: center;
     background-color: darkcyan;
-    width: 641px;
-    height: 641px;
-    float: left;
+    width: 50vw;
+    height: 50vh;
+    
 }
 
 #brother {
@@ -30,9 +30,9 @@
     align-items: center;
     justify-content: center;
     background-color: yellow;
-    width: 641px;
-    height: 641px;
-    float: left;
+    width: 50vw;
+    height: 50vh;
+    
 }
 
 #lion {
@@ -40,7 +40,12 @@
     align-items: center;
     justify-content: center;
     background-color: orangered;
-    width: 641px;
-    height: 641px;
-    float: left;
+    width: 50vw;
+    height: 50vh;
+  
+}
+
+img{
+    width: 25vw;
+    height: 25vw;
 }
