@@ -1,3 +1,6 @@
+#程式有誤時，可以注意
+**右邊scrollbar是否有紅線(可能是少了括號或是分號之類的)(不一定是邏輯錯誤!!)**
+
 # 在js 動態新增一個div在指定的位置
 
 #### 新增物件的位置目標.insertAdjacentElement("在該目標的哪裡",想動態新增的物件)
@@ -57,9 +60,11 @@ var childs = document.getElementById("show").childNodes
 function fn(){
     var x = 2 
     y = 6
+    let z = 3 
 }
-// x ==> 局部變量
+// x ==> 區域變量
 // y ==> 全局變量
+// z ==> 區域變量
 ```
 #嚴格模式
 ````
@@ -175,3 +180,24 @@ console.log(obj === undefined); // false
 #url結構分析
 
 ![url結構分析](urlmassege.png)
+
+#讀檔 及 寫檔
+>readFile() & readFileSync()
+這兩個的差別在於 readFile()裡面有回調函數
+而 readFileSync()裡面沒有
+writeFile() & writeFileSync()也一樣
+readFile() & readFileSync()返回的是一個Buffer
+
+
+#正則(規)表達式
+
+
+**正規語法 (Regular Grammar) 是一種相當簡單的語法，這種語法被 Perl 語言成功的用於字串比對**
+
+
+[資料在這邊](https://atedev.wordpress.com/2007/11/23/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%A4%BA%E5%BC%8F-regular-expression/
+)
+
+[資料在這邊](http://ccckmit.wikidot.com/regularexpression
+)
+
