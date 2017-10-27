@@ -1,9 +1,9 @@
-####創建新的Module(model)
+#### 創建新的Module(model)
 `Terminal -> odoo-bin scaffold <module name> <where to put it>`
 
 ***
 
-####menuitem創建(view)
+#### menuitem創建(view)
 
 <menuitem name="mySevers" id="my_severs.menu_root"/>
 
@@ -43,7 +43,7 @@
 
 ***
 
-####formView(view)
+#### formView(view)
 
 ![formView排版](formViewCol.PNG)
 ```
@@ -103,7 +103,7 @@ def name_get(self):  =>繼承至model
 
 ***
 
-####searchView(view)
+#### searchView(view)
 
 ```
 <record id="my_severs_record_search" model="ir.ui.view">
@@ -136,7 +136,7 @@ def name_get(self):  =>繼承至model
 
 ***
 
-####View inheritance(view)
+#### View inheritance(view)
 
 **!! 繼承畫面必須要再建立一個.py跟.xml檔 !!**
 (.py可以取名為 res_partner .xml 可以取名為 res_partner_views)
@@ -234,7 +234,7 @@ class ResPartner(models.Model):
 
 ***
 
-####model(model)
+#### model(model)
 `name = fields.xxx(Attributes)`
 ***Attributes***
 `required = True/False => 該欄位是否為必填`
@@ -247,7 +247,7 @@ class ResPartner(models.Model):
 
 ***
 
-####constraints(限制)(model)
+#### constraints(限制)(model)
 ```
  @api.constrains('IP_Address')
 <!--對欄位'IP_Address'進行限制-->
@@ -285,7 +285,7 @@ class ResPartner(models.Model):
 
 ***
 
-####treeview
+#### treeview
 
 ***decoration-xxx***
 用字體顏色來表達狀態
@@ -311,7 +311,7 @@ class ResPartner(models.Model):
 
 ***
 
-####many2one、one2many
+#### many2one、one2many
 
 當欄位使用many2one or one2many 時，可以選取對象以創建好的項目外，也可以對該對象新增項目，只要在自己的 .xml裡面增加 option即可
 

@@ -1,4 +1,4 @@
-#程式有誤時，可以注意
+# 程式有誤時，可以注意
 **右邊scrollbar是否有紅線(可能是少了括號或是分號之類的)(不一定是邏輯錯誤!!)**
 
 # 在js 動態新增一個div在指定的位置
@@ -35,7 +35,7 @@ x.remove()
 
 
 
-#找尋child並且對其做變
+# 找尋child並且對其做變
 
 *\<p>x\</p>* 裡面的x是一個 text 子節，它是 **\<p>\</p>的子節點 !!!**
 [example](https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_node_childnodes_length) 
@@ -50,11 +50,11 @@ var childs = document.getElementById("show").childNodes
             childs[i].style.display = ''
 ```
 
-#javascript 的一些小方法
+# javascript 的一些小方法
 
 [點我](http://jjnnykimo.pixnet.net/blog/post/23631565-%5B%E6%95%99%E5%AD%B8%5D-40%E7%A8%AE%E7%B6%B2%E7%AB%99%E5%B8%B8%E7%94%A8javascript%E6%8A%80%E5%B7%A7)
 
-#全域變量、區域變量
+# 全域變量、區域變量
 
 ```
 function fn(){
@@ -66,12 +66,12 @@ function fn(){
 // y ==> 全局變量
 // z ==> 區域變量
 ```
-#嚴格模式
+# 嚴格模式
 ````
 'use strict';
 ````
 
-#函數名稱
+# 函數名稱
 
 **在嚴格模式下無法使用**
 
@@ -90,7 +90,7 @@ function facterial(num){
 **callee ==> 被調用的方法**
 **caller ==> 調用的方法**
 
-#fun.call(thisObj,a,b,...)、fun.apply(thisObj,[a,b,...])
+# fun.call(thisObj,a,b,...)、fun.apply(thisObj,[a,b,...])
 
 **call跟apply用法一樣只是在第二個之後的變數上宣告方式不同**
 **thisObj是帶入的fun內的this**
@@ -115,7 +115,7 @@ var white_dog = {food:"bone"};
 black_cat.say.call(white_dog);
 ```
 
-#懶加載(延遲加載)
+# 懶加載(延遲加載)
 
 &nbsp;
 &nbsp;
@@ -168,7 +168,7 @@ console.log(obj === null); // false
 console.log(obj === undefined); // false
 ````
 
-#類別的判斷
+# 類別的判斷
 **typeof & instanceof**
 
 *typeof 任何實例化的物件都是 object*
@@ -177,11 +177,11 @@ console.log(obj === undefined); // false
 *instanceof 可區分不同實例化後的類別(class)*
 *但是如果有一方改變prototype 則兩個物件就不會一樣！！*
 
-#url結構分析
+# url結構分析
 
 ![url結構分析](urlmassege.png)
 
-#讀檔 及 寫檔
+# 讀檔 及 寫檔
 >readFile() & readFileSync()
 這兩個的差別在於 readFile()裡面有回調函數
 而 readFileSync()裡面沒有
@@ -189,7 +189,7 @@ writeFile() & writeFileSync()也一樣
 readFile() & readFileSync()返回的是一個Buffer
 
 
-#正則(規)表達式
+# 正則(規)表達式
 
 
 **正規語法 (Regular Grammar) 是一種相當簡單的語法，這種語法被 Perl 語言成功的用於字串比對**
