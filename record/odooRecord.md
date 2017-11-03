@@ -136,12 +136,30 @@ def name_get(self):  =>繼承至model
 
 ***
 
-#### View inheritance(view)
+#### inherit(model)
+
+**!! 繼承class時，要在__manifest__裡的depends添加要繼承的modle的資料夾名稱 !!**
+
+***
+#### inherit(view)
 
 **!! 繼承畫面必須要再建立一個.py跟.xml檔 !!**
 (.py可以取名為 res_partner .xml 可以取名為 res_partner_views)
 **!! 要在model資料夾裡的 __init__.py 裡面import 該.py檔 !!**
 **!! 要在__manifest__.py裡面 data 添加新增的.xml (ex. views/res_partner_views) !!**
+**繼承其他model(資料夾)時，繼承的id前面要加上該資料夾名**
+**繼承的id要記得改**
+`<field name="inherit_id" ref="資料夾名.要繼承畫面的id"/>`
+
+**要在繼承畫面裡新增東西，可以是任何TAG(不一定是field)，position的值可以當成是在xml裡的哪邊**
+`<sheet position='before'>` `<group position='inside'>`
+**要更改attribute時，要小心position有多一個"s"， position="attributes"，\<attribute>**
+```
+<field name="date_deadline" position="attributes">
+    <attribute name="invisible">context.get('deadline_visible',False)</attribute>
+</field>
+```
+
 ![在繼承的目標畫面添加欄位的方法](ViewInheritance.PNG)
 ```
 <!-- improved idea categories list -->
@@ -241,6 +259,7 @@ class ResPartner(models.Model):
 `string = 'xxx' => 該欄位顯示的名稱為 xxx, 且該欄位在DataBase裡面的 Field Lebel顯示名稱`
 `help = 'xxx' => 提示為 xxx`
 `compute = 'function 名稱' => 對該欄位用此function進行處理`
+`password = "True" => 該欄位顯示輸入的資料是 ... (就像輸入密碼時的顯示一樣)`
 
 ***fields.Selection***
 `host_category = fields.Selection([('DataBase欄位名稱', '畫面顯示名稱'),('physical', '實體機'), ('virtual', '虛擬機')], '主機種類')`
@@ -283,6 +302,8 @@ class ResPartner(models.Model):
 **sql_constrains**
 ![sql_contraints](sql_constraints.PNG)
 
+[PostgreSQL Check](https://www.postgresql.org/docs/9.3/static/ddl-constraints.html)
+
 ***
 
 #### treeview
@@ -301,6 +322,8 @@ class ResPartner(models.Model):
 程式碼如下：
 `<field name="Price" sum="price"/>`
 
+除了sum還有 avg、min、max可填
+
 **設定Defult GruopBy**
 
 ```
@@ -309,9 +332,18 @@ class ResPartner(models.Model):
 ```
 [網址在這裡](https://www.odoo.com/forum/help-1/question/how-to-add-a-default-group-by-filter-to-tree-view-29874)
 
+**editable**
+
+`<tree string="book_store_tree" editable="bottom">`
+
+editable ="bottom/top"
+bottom/top => 按create時，新增在下面或在上面
+有設定時可以直接在treeview的畫面上做資料的修改、新增及刪除，所以就**不會進入formview**
+![editable效果](tree_editable.PNG)
+
 ***
 
-#### many2one、one2many
+#### many2one、one2many(model)
 
 當欄位使用many2one or one2many 時，可以選取對象以創建好的項目外，也可以對該對象新增項目，只要在自己的 .xml裡面增加 option即可
 
@@ -329,3 +361,30 @@ no_open： True => 不能更改選取項目的資料
 no_create： True => 不能創建新的項目
             False => 能新增新的項目
 ```
+***
+
+#### 動態改變required(attrs)(view)(model)
+
+*invisible、required、readonly 可用*
+
+**想做的效果是當我 主機種類 選到 "虛擬機" 時， VM種類要是必填的欄位，但是在其他選項中則不是必填。**
+
+**在xml裡，form裡的欄位加上 attrs，缺點是當判斷不是只有幾個固定值時，代碼不易寫**
+
+代碼範例如下：
+`<field name="field_name" attrs="{'required':[('other_field','=','other_value')]}"/>`
+
+這次的解決代碼如下：
+`<field name="vm_type" options='{"no_open": False, "no_create": False}' attrs="{'required':[('host_category','=','virtual')]}"/>`
+
+![效果1](changeRequired1.PNG)
+![效果2](changeRequired2.PNG)
+![方法](dynamicChangeRequired.PNG)
+
+***其他資料 在Packt.Odoo.10.Development.Essentials.1785884883.pdf
+的 p165 有介紹Dynamic attributes(attrs)***
+
+#### _order(model)
+
+**用於排序，就像是SQL裡面的ORDER BY**
+`_order = 'price'`
